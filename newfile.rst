@@ -1,12 +1,12 @@
 #. Task 1
 
-    .. code-block:: bash
+   .. code-block:: bash
 
-        some code
+      some code
 
 #. Task 2
 
-    - subtask 1
-    - subtask 2
+   - subtask 1
+   - subtask 2
 
 #. Task 3

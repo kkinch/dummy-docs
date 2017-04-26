@@ -1,0 +1,26 @@
+language: python
+python:
+- '2.7'
+
+sudo: required
+services:
+- docker
+before_install:
+- docker pull f5devcentral/containthedocs
+install: true
+script:
+- ./scripts/docker-docs.sh ./scripts/test-docs.sh
+deploy:
+- provider: s3
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  bucket: $AWS_S3_BUCKET
+  local_dir: docs/_build/html
+  upload_dir: containers/v1
+  region: us-west-2
+  acl: public_read
+  skip_cleanup: true
+  on:
+    repo: jputrino/test-deploy
+    condition:
+      - $TRAVIS_BRANCH =
