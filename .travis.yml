@@ -9,9 +9,9 @@ before_install:
 - docker pull f5devcentral/containthedocs
 install: true
 script:
-- ./scripts/docker-docs.sh ./scripts/test-docs.sh
-- echo $TRAVIS_BRANCH
+ - ./scripts/docker-docs.sh ./scripts/test-docs.sh
 deploy:
 - provider: script
-  script: scripts/deploy-docs.sh
-
+  skip_cleanup: true
+  script:
+  - ./scripts/deploy-docs.sh publish-container-docs-to-prod containers v1
