@@ -1,4 +1,7 @@
 # test-deploy
+
+[![Build Status](https://travis-ci.org/jputrino/test-deploy.svg?branch=master)](https://travis-ci.org/jputrino/test-deploy)
+
 This project tests deployment of documentation built with sphinx inside a docker container to an AWS s3 bucket using Travis-CI. 
 
 The `docs` directory contains sample doc files for testing.
