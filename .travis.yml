@@ -4,7 +4,7 @@ python:
 sudo: required
 env:
   global: 
-  - USER_REPO=[ $TRAVIS_REPO_SLUG | cut -f -1 -d / ]
+  - USER_REPO=$(echo $TRAVIS_REPO_SLUG | cut -f -1 -d /)
 services:
 - docker
 before_install:
@@ -23,5 +23,5 @@ deploy:
   # enter the release branch here if you don't want to deploy from master
   #  branch: <release-branch>
   script:
-  - ./scripts/deploy-docs.sh publish-container-docs-to-prod $TRAVIS_REPO_SLUG $TRAVIS_BUILD_ID
+  - ./scripts/deploy-docs.sh publish-container-docs-to-prod $USER_REPO $TRAVIS_BUILD_ID
   
