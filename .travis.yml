@@ -20,4 +20,5 @@ deploy:
   # enter the release branch here if you don't want to deploy from master
   #  branch: <release-branch>
   script:
-  - ./scripts/deploy-docs.sh publish-container-docs-to-prod test latest
+  - ./scripts/deploy-docs.sh publish-container-docs-to-prod test v1.0
+  
