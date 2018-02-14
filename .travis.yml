@@ -1,8 +1,10 @@
 language: python
 python:
 - '2.7'
-
 sudo: required
+env:
+  global: 
+  - USER_REPO=[ $TRAVIS_REPO_SLUG | cut -f -1 -d / ]
 services:
 - docker
 before_install:
@@ -10,6 +12,7 @@ before_install:
 install: true
 script:
  - ./scripts/docker-docs.sh ./scripts/test-docs.sh
+ - echo "/${USER_REPO}/${TRAVIS_BUILD_NUMBER}"
 deploy:
 - provider: script
   skip_cleanup: true
