@@ -8,13 +8,9 @@ Contents
 
 .. toctree::
    :caption: MyCaption
+   :glob:
 
-   newfile
-   as3Parser
-   AppSvcsDeclare
-   AppSvcsDeclare
-   AppSvcsTest
-   AppSvcsTest
+   *
    
 Section 1
 ----------

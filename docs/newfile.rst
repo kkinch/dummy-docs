@@ -1,6 +1,10 @@
 My New File
 ===========
 
+.. toctree::
+
+   
+
 .. sidebar:: Hello World
 
    I am a sidebar.
