@@ -11,17 +11,5 @@ before_install:
 - docker pull f5devcentral/containthedocs
 install: true
 script:
- - ./scripts/docker-docs.sh ./scripts/test-docs.sh
- - echo "/${USER_REPO}/${TRAVIS_BUILD_NUMBER}"
-deploy:
-- provider: script
-  skip_cleanup: true
-  # the 'on' section controls conditional deployment
-  #on:
-  #  enter the parent repo here if you're working from a fork
-  #  repo: <repo>
-  # enter the release branch here if you don't want to deploy from master
-  #  branch: <release-branch>
-  script:
-  - ./scripts/deploy-docs.sh publish-container-docs-to-prod $USER_REPO $TRAVIS_BUILD_ID
-  
+ - ./scripts/docker-docs.sh make -C docs/ html
+
