@@ -1,5 +1,8 @@
 backend:
   name: git-gateway
+  accept_roles: #optional - accepts all users if left out
+    - admin
+    - editor
   branch: netlify # Branch to update (optional; defaults to master)
 
 publish_mode: editorial_workflow
@@ -7,3 +10,22 @@ publish_mode: editorial_workflow
 media_folder: "_static/img/uploads" # Media files will be stored in the repo under images/uploads
 public_folder: "/images/uploads"
 
+collections:
+  - name: "docs"
+    label: "Docs"
+    label_singular: "Add New Doc"
+    folder: "docs"
+    create: true
+    delete: false
+    extension: md
+    format:
+    slug: "{{slug}}"
+    fields:
+      fields: # The fields each document in this collection have
+      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mma"}
+      - {label: "Body", name: "body", widget: "markdown"}
+    meta:
+      - {label: "SEO Description", name: "description", widget: "text"}
+    editor:
+       preview: true
