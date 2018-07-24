@@ -1,7 +1,7 @@
 Welcome to F5's test documentation!
 ===================================
 
-Oh. You need a little dummy text for your mockup? 
+Oh. You need a little text for your mockup? 
 
 Contents
 --------
