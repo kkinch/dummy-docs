@@ -65,9 +65,46 @@ Using GitPages
 
 6. Theme isn't necessary (empty .nojekyll file).
 
-6. The page should be viewable at:
+7. The page should be viewable at:
 
    https://<username>.github.io/dummy-docs/
+
+Directory structure overview
+----------------------------
+
+Raw files are essentially loaded into the custom_sphinx_theme directories. When make run is executed, sphinx generates content and places the files in the html directories.
+
+File and directory structure
+tree -at /var/www/customsphinx
+
+docs
+├── conf.py
+├── index.rst
+├── index_reference_file.rst
+├── _build
+│       ├── doctree
+│       └── html
+│               ├── index.html
+│               └── _static
+│                       ├── css
+│                       │      └── my_custom.css
+│                       ├── js
+│                       │      └── my_custom.js
+│                       └── fonts
+│                               └── custom_font
+│
+└── custom_sphinx_theme
+        ├── theme.conf
+        ├── layout.html
+        ├── layout_include_file.html
+        └── static
+                ├── css
+                │      └── my_custom.css
+                ├── js
+                │      └── my_custom.js
+                └── fonts
+                        └── custom_font
+
 
 
 
