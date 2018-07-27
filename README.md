@@ -8,14 +8,10 @@ Here's how I've set this up for testing:
 
 Install the necessary software:
 
-1. pip install sphinx
-2. pip install f5-sphinx-theme
-3. pip install recommonmark 
-4. pip install cloud-sptheme
-5. pip install sphinxjp.themes.sphinxjp
-6. pip install sphinxjp.themes.basicstrap
+pip install -r requirements.txt
 
-You can choose one of the following methods for viewing the web site:
+
+Choose one of the following methods for viewing the web site:
 
 Local web directory
 -------------------
@@ -43,18 +39,26 @@ Local web directory
 Using GitPages
 --------------
 
-1. Set your github as remote repository:
+1. Clone this repository:
+
+   https://github.com/kkinch/dummy-docs.git
+
+2. Set your github as remote repository:
 
    git remote set-url origin git@github.com:<username>/<repo>.git
    git remote set-url origin https://github.com/<username>/repo>.git
 
-2. Push to your github
+2. Push to your github.
 
    git push
-3. Log in to your repository
+
+3. Log in to your repository.
+
 4. Select settings
-4. Scroll to GitHub Pages
-5. Select master branch /docs folder
+
+4. Scroll to GitHub Pages.
+
+5. Select master branch /docs folder:
 
    No using a Jekyll theme (empty .nojekyll file)
 
