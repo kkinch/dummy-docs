@@ -2,43 +2,48 @@
 
 [![Build Status](https://travis-ci.org/jputrino/test-deploy.svg?branch=master)](https://travis-ci.org/jputrino/test-deploy)
 
-This project can be used to test documentation tools for projects using sphinx. 
-It's set up with the [f5-sphinx-theme](https://github.com/f5devcentral/f5-sphinx-theme) and uses the same scripts and tooling as the doc sets published on clouddocs.f5.com.
+The dummy-docs project is used to test documentation tools for projects using the [f5-sphinx-theme](https://github.com/f5devcentral/f5-sphinx-theme). It also uses the same scripts and tooling as the doc sets published on clouddocs.f5.com.
 
-apt install python-sphinx
+Here's how I've set this up for testing:
 
+Install the necessary software:
 
-pip install -U sphinx
-pip install f5-sphinx-theme
-pip install recommonmark 
-pip install cloud-sptheme
-pip install sphinxjp.themes.sphinxjp
-pip install sphinxjp.themes.basicstrap
+1. pip install sphinx
+2. pip install f5-sphinx-theme
+3. pip install recommonmark 
+4. pip install cloud-sptheme
+5. pip install sphinxjp.themes.sphinxjp
+6. pip install sphinxjp.themes.basicstrap
 
-cd /var/www
+You can choose one of the following methods for viewing the web site:
 
-https://github.com/kkinch/dummy-docs.git
-
-cd /var/www/dummy-docs
-
-make html
-
-CSS files are at:
-
+Local web directory
+-------------------
+1. Change into a web directory:
+   cd /var/www
+2. Clone this repository:
+   https://github.com/kkinch/dummy-docs.git
+3. Change to the dummy-docs directory:
+   cd /var/www/dummy-docs
+4. Generate the html:
+   make html
+5. The CSS files are in:
    /var/www/dummy-docs/docs/html/_static/css
 
-
-Push to your github
-Go to repository
-Select settings
-Scroll to GitHub Pages
-Select master branch /docs folder
-No using a Jekyll theme (empty .nojekyll file)
-Should be viewable at:
-
+Using GitPages
+--------------
+1. Set your github as remote repository:
+   git remote set-url origin git@github.com:<username>/<repo>.git
+   git remote set-url origin https://github.com/<username>/repo>.git
+2. Push to your github
+   git push
+3. Log in to your repository
+4. Select settings
+4. Scroll to GitHub Pages
+5. Select master branch /docs folder
+   No using a Jekyll theme (empty .nojekyll file)
+6. The page should be viewable at:
    https://<username>.github.io/dummy-docs/
-
-http://10.145.104.168/
 
 
 
