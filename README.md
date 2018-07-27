@@ -4,7 +4,8 @@
 
 The dummy-docs project is used to test documentation tools for projects using the [f5-sphinx-theme](https://github.com/f5devcentral/f5-sphinx-theme). It also uses the same scripts and tooling as the doc sets published on clouddocs.f5.com.
 
-Here's how I've set this up for testing:
+The Setup
+=========
 
 Install the necessary software:
 
@@ -22,7 +23,7 @@ Local web directory
 
 2. Clone this repository:
 
-   https://github.com/kkinch/dummy-docs.git
+   git clone https://github.com/kkinch/dummy-docs.git
 
 3. Change to the dummy-docs directory:
 
@@ -41,7 +42,7 @@ Using GitPages
 
 1. Clone this repository:
 
-   https://github.com/kkinch/dummy-docs.git
+   git clone https://github.com/kkinch/dummy-docs.git
 
 2. Set your github as remote repository:
 
@@ -58,9 +59,11 @@ Using GitPages
 
 4. Scroll to GitHub Pages.
 
-5. Select master branch /docs folder:
+5. Select:
 
-   No using a Jekyll theme (empty .nojekyll file)
+   master branch /docs folder:
+
+6. Theme isn't necessary (empty .nojekyll file).
 
 6. The page should be viewable at:
 
