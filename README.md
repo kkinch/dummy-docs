@@ -77,6 +77,7 @@ Raw files are essentially loaded into the custom_sphinx_theme directories. When 
 File and directory structure
 tree -at /var/www/customsphinx
 
+```
 docs
 ├── conf.py
 ├── index.rst
@@ -107,5 +108,5 @@ docs
 
 
 
-
-
+</pre>
+```
