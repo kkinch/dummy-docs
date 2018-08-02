@@ -3,19 +3,21 @@ python:
 - '2.7'
 sudo: required
 env:
-  global: 
+  global:
   - USER_REPO=$(echo $TRAVIS_REPO_SLUG | cut -f -1 -d /)
+  - secure: 2OZ07PjJC9KzlnpIvQbC1Mg1RWQ3x8DmxwsP9H2Y7s32DdSF/KDJbgHthyxzCqf+JFedi/vZy0WSH+1jZduw5BbWiZDZi8t/ohjFqlD0WysqF+tDP7Xs/YqYMRUXiFm5suliuDe2GHlmrXr4yDMXIH/kikeJ/abCFCx1P+9aHaBXwAgDaD2SuInSCqgVrNoIxQ0JoWxrHWFdKrRmBAhIKwcMqr/e0QBU+D61SDkFUNA7Hg6gBG5+GWm3XtQUc2slaSXsTppheme4zlseX1sCFH2HO62xT/K+GA4f10qyArfejz0pvXaqSxZd97T/RIlycSY7BMBU6O/mzIy41QNokwrsGMLHpHm8Ldy2O0m8iOcRNq9kEP0TvJNfSwy/iWwx1NrewwU0e6n0LQZrwQUzw8ND/bmk2uDfmVDc0Gbt7JxX4vU0tikHIMLvi43GYHcybDJs9L0NbGRPV//uUNmR2Qt5nvQhbDbvcEAvbzGulT/kw8g0bWoY9qi6yey2+O+jE9JGZyNaVRKd1gibE7eTZ02e2x1nUngn4wrAuSuXVI4VUFyJMcWA1zi4zmZHwRxwad5+IurjaljWavz4jnRdLFPw1x4mHa3M/9NJDcK0VL29BP9TWbSD5fIqsHmPlNBN92jPManSFIk1D5lrI5qO6Zf+lrMye6IMszsIRwvSRD8=
+  - secure: BY9swE92rEQ/qmo94Fno7uu5GhvK+GAB4Z1kQtLJioAHYg2CmZr9FwEtcCuQn52M+Ix/IMcsiEkLzUjqdderogqzmdbq9Jr6jB1c3zf8cVBPO7ZdsM7uPNWzcQJurbPiRva7rjMZgxIszETMEpybFgUG3+2wrH/uDwjhfPqbQtse3Hb9IJWp1Uf1mvXo/uJsGn7Z9L4ycJ1tLX1SiD59LRxPEb13cpVgwxlqs0Scjmzu/DLnCr8yQwFDPawX3iDKrVrvER9Xz0YtKWzfwmpVDRZAlNeLTA2JyXpJj4txTQU5FJHULFVC53T6VpTpQq/GjccOJwJl6H+db0FOsS46jWaZZy4UyvrfF+AAmZfVpYZnz/I/y3OgJc1yCxIjlxhQTdi80YhjvzkJwrd5CydtjDiqaJmdZdZskzAPKeY78HfTxamD5EJ3XmC9YDxer4rdq0FusGpDjz2YwPTuIHcNFlZIvnu60Lmh6+7bRbzgm2Res6h3ufnJjv+kZvSEUqKNI8NROKRaOet93CSzpzGi9bq6tNQTjFBbEZ1rH5cj5GMnFY1epJz+mJmsXWPvai6/2PZ/jwarJnMZvTDBPed+6pwKbnPnaPS9/cD7qW+BRxW72qT38pdW6REK3nM84jzuHm9ygE5lDkTMxtLJPUy/CnRtBnvzsDEUsaTJ3IZZbdI=
 services:
 - docker
 before_install:
 - docker pull f5devcentral/containthedocs
 install: true
 script:
- - ./scripts/docker-docs.sh make -C docs/ html
+- "./scripts/docker-docs.sh make -C docs/ html"
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: $GITHUB_TOKEN
+  github-token: "$GITHUB_TOKEN"
   keep-history: true
   on:
     branch: master
