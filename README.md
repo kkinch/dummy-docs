@@ -72,7 +72,7 @@ Using GitPages
 Directory structure overview
 ----------------------------
 
-Raw files are essentially loaded into the **custom_sphinx_theme** sub-directories. When **make run** is executed, Sphinx generates content and places the new files in the **html** sub-directories.
+Raw files are essentially loaded into the **custom_sphinx_theme** sub-directories. When **make html** is executed, Sphinx generates content and places the new files in the **html** sub-directories.
 
 ```
 tree -at /var/www/customsphinx
